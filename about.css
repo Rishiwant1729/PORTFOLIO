@@ -1,0 +1,255 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Main Container */
+.about {
+    display: flex;
+    justify-content: space-between; /* Spacing out content and image */
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    height: 80vh; /* Adjust the height of the container */
+}
+
+/* Centered Heading */
+.centered-heading {
+    position: absolute;
+    top: 1rem;  /* Adjust this value to move the heading a little higher */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-top: -20px;
+    color: #333;
+}
+
+/* .centered-heading span {
+    color: #64ffda;
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+} */
+
+.me-text {
+    color: #FF4040; /* Floral red */
+    text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
+    transition: all 0.3s ease;
+}
+
+.exclamation {
+    color: #10dfdf; /* Floral red */
+    text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Optional hover effects */
+.me-text:hover,
+.exclamation:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 12px rgba(255, 64, 64, 0.6);
+    cursor: default;
+}
+
+/* Content Section */
+.content-section {
+    flex: 1;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.text-content {
+    padding-right: 1.5rem;
+    margin-left: -50px;
+    text-align: left;
+    /* width: 70%; */
+}
+
+.text-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.name-highlight {
+    color: #10dfdf;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: inline-block;
+    text-shadow: 0 0 8px rgba(80, 244, 217, 0.918);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Add these CSS rules */
+.color-red {
+    color: #FF4040 ;
+    text-shadow: 0 0 8px rgba(255, 64, 64, 0.4);
+}
+
+.color-cyan {
+    color: #10dfdf ;
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+/* Optional hover effects */
+.text-content strong {
+    transition: all 0.3s ease;
+}
+
+.text-content strong:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* .text-content p::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #FF4040;
+    font-size: 1.1rem;
+} */
+
+
+
+.profile-image {
+    width: 45%;
+    height: 500px;
+    object-fit: cover;
+    transition: all0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0);
+    margin-right: -100px;
+}
+
+.bottom-nav {
+    background-color: rgb(150, 234, 246);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 500px;
+    margin: 15px auto;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.bottom-nav:hover:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background-color: #00ffff;
+    border-radius: 112px;
+    z-index: -1;
+    background-size: 200% 200%;
+
+    animation: border-glow 2.5s linear infinite;
+
+    filter: blur(8px);
+    opacity: (0.7)
+    
+}
+
+@keyframes border-glow {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.nav-link {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
+    transition: all 0.3s ease;
+    padding: 0 20px;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    /* background-color: #00ffff; */
+    background-color: #FF4040;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    width: 0;
+    filter: drop-shadow(0 0 2px 2px #00ffff);
+
+}
+
+.nav-link:hover::after{
+    width: 50px;
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+.nav-link:hover {
+    color: #00ffff;
+    /* color: #ff4040; */
+    transform: translateY(-3px) scale(1.3);
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.4))
+           drop-shadow(0 0 10px rgba(0, 255, 255, 0.3))
+           drop-shadow(0 0 15px rgba(0, 255, 255, 0.2));
+}
+
+.cyber-image {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    /* z-index: 1000; */
+    border-radius: 15%;
+    width: 150px;
+    height: 50px;
+    /* opacity: 0.9; */
+    transition: all 0.3s ease-in-out;
+    filter: 
+        drop-shadow(0 0 5px #00ffff)
+        drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+    transform: rotate(3deg);
+    cursor: pointer;
+}
+
+.cyber-image:hover {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1.1);
+    filter: 
+        drop-shadow(0 0 10px #00ffff)
+        drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))
+        drop-shadow(0 0 30px rgba(0, 255, 255, 0.3));
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}

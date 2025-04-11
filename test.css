@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.new-project {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.project-heading {
+    font-size: 6rem;
+    font-weight: extra-bold;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    line-height: 1.34;
+    width: 90%;
+    margin-top: -2.5rem;
+    /* margin: 0 0 0 0; */
+}
+
+.schedule-button {
+    display: inline-flex;
+    font-size: 1.2rem;
+    color: #ff004f;
+    transition: all 0.3s ease;
+    justify-content: end;
+    margin: -5rem 0 0 -2.5rem;
+}
+
+.schedule-button:hover {
+    color: #ff3366;
+}
+
+.message-heading {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.message-heading span {
+    color: #ff004f;
+    font-size: 1.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-row {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #00ffff;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ff004f;
+    box-shadow: 0 0 8px rgba(255, 0, 79, 0.3);
+    color: #ff004f;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    align-self: flex-start;
+    background: #ff004f;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.submit-button:hover {
+    background: #ff3366;
+    transform: translateY(-2px);
+    color:  #00ffff;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Signature Image Styles */
+.cyber-image {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    border-radius: 15%;
+    width: 150px;
+    height: 50px;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0 0 5px #00ffff)
+            drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+    transform: rotate(3deg);
+    cursor: pointer;
+}
+
+.cyber-image:hover {
+    transform: rotate(-3deg) scale(1.1);
+    filter: drop-shadow(0 0 10px #00ffff)
+            drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))
+            drop-shadow(0 0 30px rgba(0, 255, 255, 0.3));
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Bottom Navigation Styles */
+.bottom-nav {
+    background-color: rgb(150, 234, 246);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 500px;
+    margin: 15px auto;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    z-index: 1000;
+}
+
+.bottom-nav:hover:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background-color: #00ffff;
+    border-radius: 112px;
+    z-index: -1;
+    background-size: 200% 200%;
+    animation: border-glow 2.5s linear infinite;
+    filter: blur(8px);
+    opacity: 0.7;
+}
+
+@keyframes border-glow {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+.nav-link {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    padding: 0 20px;
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+}
+
+.nav-link:hover {
+    color: #ff004f;
+    transform: translateY(-3px) scale(1.3);
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.4))
+           drop-shadow(0 0 10px rgba(0, 255, 255, 0.3))
+           drop-shadow(0 0 15px rgba(0, 255, 255, 0.2));
+}
+
+/* Vertical Email Styles */
+.vertical-email {
+    writing-mode: vertical-rl;
+    font-size: 1.5rem;
+    color: #ff004f;
+    position: absolute;
+    right: -20px;
+    top: 20%;
+    letter-spacing: 15px;
+    font-weight: semi-normal;
+    text-decoration: none;
+}
+
+.vertical-email:hover {
+    text-shadow: 0 1px #ff004f;
+
+}

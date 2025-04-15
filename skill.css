@@ -61,6 +61,7 @@ body {
   .skill-card:hover {
     transform: scale(1.08);
     cursor: pointer;
+    border: 1px red solid;
   }
   
   .skill-card:hover i {
